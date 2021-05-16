@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="136.0" layoutY="168.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="235.0" text="Button" />
+      <Line endX="-100.0" endY="744.800048828125" layoutX="600.0" layoutY="40.0" startX="-100.0" startY="-23.20000648498535" />
+      <Text layoutX="873.0" layoutY="740.0" strokeType="OUTSIDE" strokeWidth="0.0" text="jason loaded" wrappingWidth="76.4639892578125" />
+      <ImageView fitHeight="484.0" fitWidth="498.0" layoutX="501.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Downloads/hammer.jpeg" />
+         </image>
+      </ImageView>
+      <Button layoutX="136.0" layoutY="446.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="235.0" text="Button" />
+   </children>
+</AnchorPane>

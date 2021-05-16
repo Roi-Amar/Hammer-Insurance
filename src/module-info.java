@@ -1,5 +1,8 @@
 module DesignPatternsFinalProject {
 	requires javafx.controls;
-	
-	opens application to javafx.graphics, javafx.fxml;
+	requires javafx.fxml;
+	requires javafx.graphics;
+	requires javafx.base;
+	exports application;
+	opens application to javafx.graphics;
 }
