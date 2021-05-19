@@ -1,5 +1,5 @@
 package customerDeorator;
 
 public interface Customer {
-	   public void exampleFunk();	
+	public String whoAmI();
 }

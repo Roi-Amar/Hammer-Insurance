@@ -2,7 +2,9 @@ package insuranceFactory;
 
 public class IncapacityToWorkInsuranceGenerator extends InsuranceGenerator{
 	@Override
-	public InsuranceType createInsurance() {
-		return new IncapacityToWorkInsurance();
+	public Insurance createInsurance(String price) {
+		Insurance insurance = new IncapacityToWorkInsurance();
+		insurance.setData(price);
+		return insurance;
 	}
 }

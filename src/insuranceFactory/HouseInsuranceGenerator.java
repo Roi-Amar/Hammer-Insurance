@@ -2,7 +2,9 @@ package insuranceFactory;
 
 public class HouseInsuranceGenerator extends InsuranceGenerator{
 	@Override
-	public InsuranceType createInsurance() {
-		return new HouseInsurance();
+	public Insurance createInsurance(String price) {
+		Insurance insurance = new HouseInsurance();
+		insurance.setData(price);
+		return insurance;
 	}
 }
