@@ -14,23 +14,23 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane prefHeight="150.0" prefWidth="1000.0" style="-fx-background-color: D5E1F2;">
+      <AnchorPane layoutY="-1.0" prefHeight="150.0" prefWidth="1000.0" style="-fx-background-color: #7F97D3;">
          <children>
-            <ImageView fitHeight="92.0" fitWidth="200.0" layoutX="431.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="92.0" fitWidth="200.0" layoutX="454.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/hammer150.png" />
+                  <Image url="@../img/add-user.png" />
                </image>
             </ImageView>
-            <Text fill="#345098" layoutX="414.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="new customer">
+            <Text fill="WHITE" layoutX="381.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="new customer">
                <font>
-                  <Font name="Ebrima Bold" size="26.0" />
+                  <Font name="Ebrima Bold" size="36.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="leftPane" layoutY="150.0" prefHeight="650.0" prefWidth="500.0" style="-fx-background-color: #C7D6ED;">
          <children>
-            <Button fx:id="car" layoutX="51.0" layoutY="44.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;" text="car">
+            <Button fx:id="car" layoutX="51.0" layoutY="44.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="153.0" style="-fx-background-color: #7F97D3; -fx-background-image: url('../img/car.png');">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
@@ -41,20 +41,15 @@
                         <Stop color="WHITE" offset="1.0" />
                      </stops>
                   </LinearGradient>
-               </textFill></Button>
-            <Button layoutX="280.0" layoutY="412.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="164.0" style="-fx-background-color: #7F97D3;" text="vip">
-               <font>
-                  <Font name="Ebrima Bold" size="26.0" />
-               </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#e3ebf6" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill></Button>
-            <Button layoutX="277.0" layoutY="44.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;" text="type">
+               </textFill>
+               <graphic>
+                  <ImageView fitHeight="86.0" fitWidth="140.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/car.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button fx:id="house" layoutX="277.0" layoutY="44.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
@@ -66,8 +61,15 @@
                      </stops>
                   </LinearGradient>
                </textFill>
+               <graphic>
+                  <ImageView fitHeight="121.0" fitWidth="140.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/house.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button layoutX="280.0" layoutY="480.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="164.0" style="-fx-background-color: #7F97D3;" text="corporate">
+            <Button fx:id="life" layoutX="51.0" layoutY="235.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
@@ -79,8 +81,15 @@
                      </stops>
                   </LinearGradient>
                </textFill>
+               <graphic>
+                  <ImageView fitHeight="116.0" fitWidth="126.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/life.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button layoutX="51.0" layoutY="223.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;" text="type">
+            <Button fx:id="health" layoutX="277.0" layoutY="235.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
@@ -92,8 +101,15 @@
                      </stops>
                   </LinearGradient>
                </textFill>
+               <graphic>
+                  <ImageView fitHeight="103.0" fitWidth="110.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/health.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button layoutX="277.0" layoutY="223.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;" text="type">
+            <Button fx:id="incapacity" layoutX="277.0" layoutY="425.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
@@ -105,38 +121,58 @@
                      </stops>
                   </LinearGradient>
                </textFill>
+               <graphic>
+                  <ImageView fitHeight="111.0" fitWidth="112.0" opacity="0.55" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/incapacity.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
             </Button>
-            <Button layoutX="58.0" layoutY="402.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="172.0" style="-fx-background-color: #7F97D3;" text="type">
+            <Button layoutX="14.0" layoutY="584.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #7F97D3; -fx-border-color: #ffd39e;" text="cancel" textFill="#ffd39e">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#e3ebf6" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Button>
-            <Button layoutX="22.0" layoutY="584.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #7F97D3;" text="cancel">
+            <Text fill="#3e5894" layoutX="116.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="car">
+               <font>
+                  <Font name="Ebrima Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#3e5894" layoutX="321.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="house">
+               <font>
+                  <Font name="Ebrima Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#3e5894" layoutX="319.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="health">
+               <font>
+                  <Font name="Ebrima Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#3e5894" layoutX="115.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="life">
+               <font>
+                  <Font name="Ebrima Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fill="#3e5894" layoutX="328.0" layoutY="422.0" strokeType="OUTSIDE" strokeWidth="0.0" text="I.T.W">
+               <font>
+                  <Font name="Ebrima Bold" size="30.0" />
+               </font>
+            </Text>
+            <Button layoutX="54.0" layoutY="422.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="164.0" style="-fx-background-color: #7F97D3;" text="V . I . P" textFill="#3f4f8f">
+               <font>
+                  <Font name="Ebrima Bold" size="26.0" />
+               </font></Button>
+            <Button layoutX="54.0" layoutY="488.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="164.0" style="-fx-background-color: #7F97D3;" text="Corporate" textFill="#3f4f8f">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#e3ebf6" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="rightPane" layoutX="500.0" layoutY="150.0" prefHeight="650.0" prefWidth="500.0" style="-fx-background-color: #E3EBF6;">
          <children>
-            <JFXTextField fx:id="txtInvitingEmail" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="357.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* Email" styleClass="txtField" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txtInvitingEmail" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="311.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* Email" styleClass="txtField" unFocusColor="#a3a3a3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -144,7 +180,7 @@
                   <Font name="Ebrima" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtInvitingEmail1" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="448.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* Phone Number" styleClass="txtField" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txtInvitingEmail1" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="402.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* Phone Number" styleClass="txtField" unFocusColor="#a3a3a3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -152,7 +188,7 @@
                   <Font name="Ebrima" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtInvitingEmail2" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="266.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* Last Name" styleClass="txtField" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txtInvitingEmail2" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="220.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* Last Name" styleClass="txtField" unFocusColor="#a3a3a3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -160,7 +196,7 @@
                   <Font name="Ebrima" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtInvitingEmail3" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="175.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* First Name" styleClass="txtField" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txtInvitingEmail3" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="129.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* First Name" styleClass="txtField" unFocusColor="#a3a3a3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -168,7 +204,7 @@
                   <Font name="Ebrima" size="14.0" />
                </font>
             </JFXTextField>
-            <JFXTextField fx:id="txtInvitingEmail31" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="84.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* ID" styleClass="txtField" unFocusColor="#a3a3a3">
+            <JFXTextField fx:id="txtInvitingEmail31" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* ID" styleClass="txtField" unFocusColor="#a3a3a3">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -176,19 +212,21 @@
                   <Font name="Ebrima" size="14.0" />
                </font>
             </JFXTextField>
-            <Button layoutX="376.0" layoutY="588.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #7F97D3;" text="next">
+            <Button layoutX="379.0" layoutY="581.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #7F97D3; -fx-border-color: #b1ffd8;" text="next" textFill="#b1ffd8">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#e3ebf6" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill>
             </Button>
+            <Text fill="#a3a3a3" layoutX="125.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="price:">
+               <font>
+                  <Font name="Ebrima Bold" size="30.0" />
+               </font>
+            </Text>
+            <Text fx:id="changePrice" fill="#a3a3a3" layoutX="250.0" layoutY="529.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0000">
+               <font>
+                  <Font name="Ebrima Bold" size="30.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
       <Line endX="-100.0" endY="744.800048828125" layoutX="600.0" layoutY="40.0" startX="-100.0" startY="126.79997253417969" stroke="#ffd39ed9" />
