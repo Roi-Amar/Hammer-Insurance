@@ -144,8 +144,6 @@
                   <Font name="Ebrima" size="14.0" />
                </font>
             </JFXTextField>
-            <FontAwesomeIconView fx:id="phoneIcon" fill="#a1a1a1" glyphName="PHONE" layoutX="362.0" layoutY="474.0" size="16" />
-            <FontAwesomeIconView fx:id="invitingIcon" fill="#a1a1a1" glyphName="ENVELOPE" layoutX="360.0" layoutY="384.0" size="16" text="" />
             <JFXTextField fx:id="txtInvitingEmail1" focusColor="#0080ff" labelFloat="true" layoutX="125.0" layoutY="448.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="250.0" promptText="* Phone Number" styleClass="txtField" unFocusColor="#a3a3a3">
                <opaqueInsets>
                   <Insets />
@@ -178,9 +176,6 @@
                   <Font name="Ebrima" size="14.0" />
                </font>
             </JFXTextField>
-            <FontAwesomeIconView fill="#a1a1a1" glyphName="USER" layoutX="362.0" layoutY="200.0" size="16" />
-            <FontAwesomeIconView fill="#a1a1a1" glyphName="GROUP" layoutX="361.0" layoutY="291.0" size="16" />
-            <FontAwesomeIconView fill="#a1a1a1" glyphName="LIST_ALT" layoutX="359.0" layoutY="109.0" size="16" />
             <Button layoutX="376.0" layoutY="588.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="106.0" style="-fx-background-color: #7F97D3;" text="next">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
