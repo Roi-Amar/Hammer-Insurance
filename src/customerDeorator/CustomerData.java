@@ -52,5 +52,14 @@ public class CustomerData {
 		Insurances.add(insurance);
 	}
 	
+	public int totalInsurancePrice() {
+		int totalPrice = 0;
+		for (Insurance insurance : Insurances) {
+			totalPrice += insurance.getData().getPrice();
+		}
+		
+		return totalPrice;
+	}
+	
 	
 }

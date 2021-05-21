@@ -19,4 +19,11 @@ public abstract class CustomerDeorator implements Customer{
 	public void setDecoratedShape(Customer decoratedShape) {
 		this.decorated = decoratedShape;
 	}
+	
+	public abstract double getTotalPrice();
+	
+	public CustomerData getData() {
+		// TODO Auto-generated method stub
+		return decorated.getData();
+	}
 }

@@ -5,4 +5,10 @@ public class SecondTypeCustomer implements Customer{
 	public String whoAmI() {
 		return "Second";
 	}
+
+	@Override
+	public CustomerData getData() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

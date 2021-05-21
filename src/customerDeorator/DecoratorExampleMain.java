@@ -2,7 +2,7 @@ package customerDeorator;
 
 public class DecoratorExampleMain {
 	public static void main(String[] args) {
-		Customer regular = new RegularCustomer();
+		Customer regular = new RegularCustomer(null);
 		System.out.println(regular.whoAmI());
 		
 		Customer corporateRegular = new CorporateDecorator(regular);
