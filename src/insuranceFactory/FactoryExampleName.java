@@ -31,10 +31,10 @@ public class FactoryExampleName {
 		
 		if (factory!=null) {
 			price = setPrice(type);
-			Insurance i = factory.planInsurance(price);
+			Insurance i = factory.planInsurance();
 			InsuranceData data = i.getData();
 			String insureType = i.getClass().getName();
-			String totalCost = i.getData().getPrice();
+			int totalCost = i.getData().getPrice();
 			String expired = i.getData().getExpireTimeString();
 			String aquierd = i.getData().getAquireTimeString();
 			System.out.println("type:" + insureType + "\n" +

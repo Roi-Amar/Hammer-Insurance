@@ -6,16 +6,16 @@ import java.time.format.DateTimeFormatter;
 public class InsuranceData {
 	private LocalDateTime aquireTime;
 	private LocalDateTime expireTime;
-	private String price;
+	private int price;
 	private DateTimeFormatter dateTimeFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 	
-	public InsuranceData(String price) {
+	public InsuranceData(int price) {
 		aquireTime = LocalDateTime.now();
 		expireTime = LocalDateTime.now().plusYears(1) ;
 		this.price = price;
 	}
 	
-	public InsuranceData(LocalDateTime aquireTime, LocalDateTime expireTime, String price) {
+	public InsuranceData(LocalDateTime aquireTime, LocalDateTime expireTime, int price) {
 		this.aquireTime = aquireTime;
 		this.expireTime = expireTime;
 		this.price = price;
@@ -45,11 +45,11 @@ public class InsuranceData {
 		this.expireTime = expireTime;
 	}
 
-	public String getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public void setPrice(String price) {
+	public void setPrice(int price) {
 		this.price = price;
 	}
 }
