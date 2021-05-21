@@ -12,7 +12,7 @@ public class CorporateDecorator extends CustomerDeorator{
 
 	@Override
 	public double getTotalPrice() {
-		int insurancesPrice = super.getDecoratedShape().getData().totalInsurancePrice();
+		double insurancesPrice = super.getDecoratedShape().getTotalPrice();
 		return insurancesPrice*0.88;
 	}
 }

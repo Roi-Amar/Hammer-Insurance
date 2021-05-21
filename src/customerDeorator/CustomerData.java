@@ -9,6 +9,13 @@ public class CustomerData {
 	private String lastName;
 	private ArrayList<Insurance> Insurances = new ArrayList<Insurance>();
 	
+	public CustomerData(String ID, String firstName, String lastName) {
+		setID(ID);
+		setFirstName(firstName);
+		setLastName(lastName);
+	}
+
+	
 	public CustomerData(String ID, String firstName, String lastName, Insurance insurance) {
 		setID(ID);
 		setFirstName(firstName);
@@ -50,15 +57,6 @@ public class CustomerData {
 	
 	public void addInsurance(Insurance insurance) {
 		Insurances.add(insurance);
-	}
-	
-	public int totalInsurancePrice() {
-		int totalPrice = 0;
-		for (Insurance insurance : Insurances) {
-			totalPrice += insurance.getData().getPrice();
-		}
-		
-		return totalPrice;
 	}
 	
 	

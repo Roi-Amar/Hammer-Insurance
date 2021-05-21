@@ -8,10 +8,7 @@ public class DecoratorExampleMain {
 		Customer corporateRegular = new CorporateDecorator(regular);
 		System.out.println(corporateRegular.whoAmI());
 		
-		Customer secondType = new SecondTypeCustomer();
-		System.out.println(secondType.whoAmI());
-		
-		Customer VIPsecondType = new VIPDecorator(secondType);
+		Customer VIPsecondType = new VIPDecorator(regular);
 		System.out.println(VIPsecondType.whoAmI());
 		
 		Customer corporateVIPsecondType = new CorporateDecorator(VIPsecondType);
