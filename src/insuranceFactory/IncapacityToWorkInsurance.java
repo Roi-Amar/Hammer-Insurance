@@ -2,6 +2,10 @@ package insuranceFactory;
 
 public class IncapacityToWorkInsurance implements Insurance{
 	private InsuranceData data;
+	
+	public IncapacityToWorkInsurance() {
+		data = new InsuranceData(400);
+	}
 	@Override
 	public void insure() {
 		System.out.println("IncapacityToWorkInsurance");
@@ -9,6 +13,6 @@ public class IncapacityToWorkInsurance implements Insurance{
 	@Override
 	public InsuranceData getData() {
 		// TODO Auto-generated method stub
-		return null;
+		return data;
 	}
 }
