@@ -69,13 +69,6 @@ public class NewCustomerController {
     private ArrayList<String> insurenceTypes = new ArrayList<>();
     private ArrayList<String> decorationTypes = new ArrayList<>();
 
-
-    @FXML
-    void addCarInsurance(ActionEvent event) {
-    	changeBtnClass(car);
-        
-    }
-    
     private void changeBtnClass(Button btn) {
     	if (btn.getStyleClass().contains("btnClicked")) {
     		btn.getStyleClass().removeAll("btnClicked"); 
@@ -88,23 +81,37 @@ public class NewCustomerController {
     }
 
     @FXML
+    void addCarInsurance(ActionEvent event) {
+    	changeBtnClass(car);
+    	insurenceTypes.add("car");
+    }
+
+    @FXML
     void addHealthInsurance(ActionEvent event) {
     	changeBtnClass(health);
+    	insurenceTypes.add("health");
+
     }
 
     @FXML
     void addHouseInsurance(ActionEvent event) {
     	changeBtnClass(house);
+    	insurenceTypes.add("house");
+
     }
 
     @FXML
     void addITWInsurance(ActionEvent event) {
     	changeBtnClass(incapacity);
+    	insurenceTypes.add("incapacity");
+
     }
 
     @FXML
     void addLifeInsurance(ActionEvent event) {
     	changeBtnClass(life);
+    	insurenceTypes.add("life");
+
     }
 
     @FXML
@@ -115,16 +122,46 @@ public class NewCustomerController {
     @FXML
     void clickNext(ActionEvent event) {
 
+    	// get all text from input fields
+    	String id = txtID.getText().trim();
+    	String firstName = txtFirstName.getText();
+    	String lastName = txtLastName.getText();
+    	String phone = txtPhone.getText().trim();
+    	String email = txtEmail.getText().trim();
+    	
+    	// check all fields are valid:
+    	if (id.length() != 9) {
+    		manageErrorInField("ID invalid");
+    	}
+    	else if (firstName.length() < 1 || lastName.length() < 1) {
+    		manageErrorInField("Name is invalid");
+    	}
+    	else if(phone.length() < 9) {
+    		manageErrorInField("Phone is invalid");
+    	}
+    	else if(!email.contains("@")) {
+    		manageErrorInField("Email is invalid");
+    	}
+    	else {
+    		// create the customer object
+    	}
     }
 
-    @FXML
+    private void manageErrorInField(String string) {
+		// TODO Auto-generated method stub
+		// in popup or other way?
+	}
+
+	@FXML
     void makeCustomerCorporate(ActionEvent event) {
     	changeBtnClass(corporate);
+    	decorationTypes.add("corporate");
     }
 
     @FXML
     void makeCustomerVIP(ActionEvent event) {
     	changeBtnClass(vip);
+    	decorationTypes.add("VIP");
     }
 
 }
