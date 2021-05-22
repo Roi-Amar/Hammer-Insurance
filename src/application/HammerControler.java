@@ -11,6 +11,7 @@ public class HammerControler {
 	public void start(Stage primaryStage) throws Exception {
 		Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
 		Scene scene = new Scene(root);
+		scene.getStylesheets().add("application/NewCustomer.css");
 		primaryStage.setTitle("Hammer");
 		primaryStage.setScene(scene);
 		primaryStage.setResizable(false);

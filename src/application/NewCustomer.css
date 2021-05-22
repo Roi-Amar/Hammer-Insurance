@@ -1,0 +1,8 @@
+.btnUnclicked {
+	-fx-background-color: #7F97D3;
+}
+
+.btnClicked {
+	-fx-background-color: #C7D6ED;
+	-fx-border-color: #7F97D3;
+}
