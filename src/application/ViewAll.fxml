@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutY="-1.0" prefHeight="150.0" prefWidth="1000.0" style="-fx-background-color: #7F97D3;">
+         <children>
+            <Text fill="WHITE" layoutX="342.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" view all purchases">
+               <font>
+                  <Font name="Ebrima Bold" size="36.0" />
+               </font>
+            </Text>
+            <ImageView fitHeight="79.0" fitWidth="69.0" layoutX="468.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/list.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="leftPane" layoutY="150.0" prefHeight="650.0" prefWidth="1000.0" style="-fx-background-color: #C7D6ED;">
+         <children>
+            <Button fx:id="back" layoutX="14.0" layoutY="584.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #7F97D3; -fx-border-color: #ffd39e;" text="back" textFill="#ffd39e">
+               <font>
+                  <Font name="Ebrima Bold" size="26.0" />
+               </font>
+            </Button>
+            <TableView fx:id="tableToChange" layoutX="50.0" layoutY="15.0" prefHeight="558.0" prefWidth="899.0">
+              <columns>
+                <TableColumn prefWidth="75.0" text="C1" />
+                <TableColumn prefWidth="75.0" text="C2" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
