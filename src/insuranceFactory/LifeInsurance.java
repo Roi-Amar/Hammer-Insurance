@@ -15,4 +15,8 @@ public class LifeInsurance implements Insurance{
 		// TODO Auto-generated method stub
 		return data;
 	}
+	
+	public String getName() {
+		return "life";
+	}
 }
