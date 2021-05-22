@@ -9,10 +9,7 @@ public class HammerControler {
 	private Stage stage;
 	
 	public void start(Stage primaryStage) throws Exception {
-		//Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
-		Parent root = FXMLLoader.load(getClass().getResource("newCustomer1.fxml"));
-		//Parent root = FXMLLoader.load(getClass().getResource("newCustomer2.fxml"));
-		//Parent root = FXMLLoader.load(getClass().getResource("ViewAll.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
 		Scene scene = new Scene(root);
 		primaryStage.setTitle("Hammer");
 		primaryStage.setScene(scene);
