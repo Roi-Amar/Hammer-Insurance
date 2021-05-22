@@ -4,8 +4,6 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -14,11 +12,11 @@
    <children>
       <AnchorPane fx:id="leftPane" prefHeight="800.0" prefWidth="500.0" style="-fx-background-color: #C7D6ED;">
          <children>
-            <AnchorPane prefHeight="150.0" prefWidth="500.0" style="-fx-background-color: D5E1F2;">
+            <AnchorPane prefHeight="150.0" prefWidth="500.0" style="-fx-background-color: #7F97D3;">
                <children>
-                  <ImageView fitHeight="91.0" fitWidth="160.0" layoutX="181.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="109.0" fitWidth="114.0" layoutX="193.0" layoutY="4.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../img/hammer150.png" />
+                        <Image url="@../img/hammerShield.png" />
                      </image>
                   </ImageView>
                   <Text fill="#345098" layoutX="93.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to">
@@ -26,42 +24,41 @@
                         <Font name="Ebrima Bold" size="26.0" />
                      </font>
                   </Text>
-                  <Text fill="#7f97d3" layoutX="249.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hammer Insurance">
+                  <Text fill="WHITE" layoutX="249.0" layoutY="134.0" opacity="0.8" strokeType="OUTSIDE" strokeWidth="0.0" text="Hammer Insurance">
                      <font>
                         <Font name="Ebrima Bold" size="26.0" />
                      </font>
                   </Text>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <Button layoutX="92.0" layoutY="238.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3;" text="new customer">
+            <Button layoutX="92.0" layoutY="238.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3; -fx-border-color: white; -fx-border-width: 2;" text="new customer" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#e3ebf6" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill></Button>
-            <Button layoutX="92.0" layoutY="471.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3;" text="view all purchases">
+               <graphic>
+                  <ImageView fitHeight="60.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/addUser.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
+            <Button layoutX="92.0" layoutY="471.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3; -fx-border-color: white; -fx-border-width: 2;" text=" view all purchases" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
-               <textFill>
-                  <LinearGradient endX="1.0" endY="1.0">
-                     <stops>
-                        <Stop color="#e3ebf6" />
-                        <Stop color="WHITE" offset="1.0" />
-                     </stops>
-                  </LinearGradient>
-               </textFill></Button>
+               <graphic>
+                  <ImageView fitHeight="52.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/list.png" />
+                     </image>
+                  </ImageView>
+               </graphic></Button>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="rightPane" layoutX="500.0" prefHeight="800.0" prefWidth="500.0" style="-fx-background-color: #E3EBF6;">
          <children>
-            <Text layoutX="409.0" layoutY="736.0" strokeType="OUTSIDE" strokeWidth="0.0" text="jason loaded" wrappingWidth="76.4639892578125" />
+            <Text fx:id="loadJasonHere" layoutX="409.0" layoutY="736.0" strokeType="OUTSIDE" strokeWidth="0.0" text="jason loaded" wrappingWidth="76.4639892578125" />
             <ImageView fitHeight="484.0" fitWidth="498.0" layoutX="1.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/Logo_trans_croped.png" />
