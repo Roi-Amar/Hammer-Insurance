@@ -59,5 +59,9 @@ public class CustomerData {
 		Insurances.add(insurance);
 	}
 	
+	public void removeInsurance(Insurance insurance) {
+		Insurances.remove(insurance);
+	}
+	
 	
 }

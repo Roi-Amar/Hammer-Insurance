@@ -51,6 +51,15 @@ public class NewCustomerWithInsurence {
 		}
 	}
 	
+	public void removeInsurance(String insurenceType) {
+		for (Insurance i: customer.getData().getInsurances()) {
+			if (i.getName() == insurenceType) {
+				customer.getData().removeInsurance(i);
+			}
+		}
+	}
+
+	
 	public void decorateCustomer(String decorationType) {
 		switch (decorationType) {
 		case "VIP":
