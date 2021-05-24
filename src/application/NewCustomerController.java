@@ -65,9 +65,7 @@ public class NewCustomerController {
     @FXML
     private Text changePrice;
     
-    private NewCustomerWithInsurence customer;
-    private ArrayList<String> insurenceTypes = new ArrayList<>();
-    private ArrayList<String> decorationTypes = new ArrayList<>();
+    private NewCustomerWithInsurence customer = new NewCustomerWithInsurence();
 
     private void changeBtnClass(Button btn) {
     	if (btn.getStyleClass().contains("btnClicked")) {
@@ -83,34 +81,34 @@ public class NewCustomerController {
     @FXML
     void addCarInsurance(ActionEvent event) {
     	changeBtnClass(car);
-    	insurenceTypes.add("car");
+    	customer.addInsurance("car");
     }
 
     @FXML
     void addHealthInsurance(ActionEvent event) {
     	changeBtnClass(health);
-    	insurenceTypes.add("health");
+    	customer.addInsurance("health");
 
     }
 
     @FXML
     void addHouseInsurance(ActionEvent event) {
     	changeBtnClass(house);
-    	insurenceTypes.add("house");
+    	customer.addInsurance("house");
 
     }
 
     @FXML
     void addITWInsurance(ActionEvent event) {
     	changeBtnClass(incapacity);
-    	insurenceTypes.add("incapacity");
+    	customer.addInsurance("incapacity");
 
     }
 
     @FXML
     void addLifeInsurance(ActionEvent event) {
     	changeBtnClass(life);
-    	insurenceTypes.add("life");
+    	customer.addInsurance("life");
 
     }
 
@@ -155,13 +153,13 @@ public class NewCustomerController {
 	@FXML
     void makeCustomerCorporate(ActionEvent event) {
     	changeBtnClass(corporate);
-    	decorationTypes.add("corporate");
+    	customer.decorateCustomer("corporate");
     }
 
     @FXML
     void makeCustomerVIP(ActionEvent event) {
     	changeBtnClass(vip);
-    	decorationTypes.add("VIP");
+    	customer.decorateCustomer("VIP");
     }
 
 }
