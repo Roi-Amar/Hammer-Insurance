@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
    <children>
       <AnchorPane fx:id="leftPane" prefHeight="800.0" prefWidth="500.0" style="-fx-background-color: #C7D6ED;">
          <children>
@@ -32,7 +32,7 @@
                   <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </AnchorPane>
-            <Button layoutX="92.0" layoutY="238.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3; -fx-border-color: white; -fx-border-width: 2;" text="new customer" textFill="WHITE">
+            <Button fx:id="btnNewCustomer" layoutX="92.0" layoutY="238.0" mnemonicParsing="false" onAction="#openNewCustomerPage" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3; -fx-border-color: white; -fx-border-width: 2;" text="new customer" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>
@@ -43,7 +43,7 @@
                      </image>
                   </ImageView>
                </graphic></Button>
-            <Button layoutX="92.0" layoutY="471.0" mnemonicParsing="false" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3; -fx-border-color: white; -fx-border-width: 2;" text=" view all purchases" textFill="WHITE">
+            <Button fx:id="btnViewAll" layoutX="92.0" layoutY="471.0" mnemonicParsing="false" onAction="#openViewAllPage" prefHeight="143.0" prefWidth="316.0" style="-fx-background-color: #7F97D3; -fx-border-color: white; -fx-border-width: 2;" text=" view all purchases" textFill="WHITE">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>

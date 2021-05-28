@@ -1,18 +1,31 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXTextField;
 
+import entity.Exam;
+import gui_teacher.CreateExam_addQ_step2Controller;
+import gui_teacher.TeacherController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import logic.NewCustomerWithInsurence;
 
 public class NewCustomerController implements Initializable{
@@ -120,6 +133,16 @@ public class NewCustomerController implements Initializable{
 
     @FXML
     void clickCancel(ActionEvent event) {
+    	manageErrorInField("You data will not be saved!");
+    	try {
+
+			Pane newScreen = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+			HammerControler.root.add(newScreen, 0, 0);
+
+		} catch (IOException e) {
+			System.out.println("Couldn't load!");
+			e.printStackTrace();
+		}
 
     }
 
@@ -148,13 +171,25 @@ public class NewCustomerController implements Initializable{
     	}
     	else {
     		customer.updateCostumerData(id, firstName, lastName, email, phone);
+    		// start next page
+    		startNextScreen();
     	}
     }
-
-    private void manageErrorInField(String string) {
-		// TODO Auto-generated method stub
-		// in popup or other way?
+    
+ // create a popup with a message
+	public void manageErrorInField(String txt) {
+		final Stage dialog = new Stage();
+		VBox dialogVbox = new VBox(20);
+		Label lbl = new Label(txt);
+		lbl.setPadding(new Insets(5));
+		lbl.setAlignment(Pos.CENTER);
+		lbl.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+		dialogVbox.getChildren().add(lbl);
+		Scene dialogScene = new Scene(dialogVbox, lbl.getMinWidth(), lbl.getMinHeight());
+		dialog.setScene(dialogScene);
+		dialog.show();
 	}
+
 
 	@FXML
     void makeCustomerCorporate(ActionEvent event) {
@@ -192,6 +227,20 @@ public class NewCustomerController implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		customer = new NewCustomerWithInsurence();
 		customer.setCostumerData(null, null, null, null, null);
+	}
+	
+	private void startNextScreen() {
+    	try {
+
+			Pane newScreen = FXMLLoader.load(getClass().getResource("NewCustomer2.fxml"));
+			HammerControler.root.add(newScreen, 0, 0);
+
+		} catch (IOException e) {
+			System.out.println("Couldn't load!");
+			e.printStackTrace();
+		}
+
+		
 	}
 
 }
