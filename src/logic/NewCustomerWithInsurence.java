@@ -1,10 +1,11 @@
 package logic;
 
-import customerDeorator.CorporateDecorator;
-import customerDeorator.Customer;
-import customerDeorator.CustomerData;
-import customerDeorator.RegularCustomer;
-import customerDeorator.VIPDecorator;
+import customerDecorator.CorporateDecorator;
+import customerDecorator.Customer;
+import customerDecorator.CustomerData;
+import customerDecorator.CustomerDecorator;
+import customerDecorator.RegularCustomer;
+import customerDecorator.VIPDecorator;
 import insuranceFactory.CarInsuranceGenerator;
 import insuranceFactory.HealthInsuranceGenerator;
 import insuranceFactory.HouseInsuranceGenerator;
@@ -71,6 +72,18 @@ public class NewCustomerWithInsurence {
 		default:
 			System.out.println("No such option");
 		}
+	}
+	
+	public void removeDecoration(String decorationType) {
+		// check if the external decorator is the one we need to remove
+		if (customer.whoAmI().contains(decorationType)) {
+			customer = ((CustomerDecorator)customer).getDecoratedShape();
+		}
+		// if not, the decoration needed to remove is the internal one
+		else {
+			
+		}
+
 	}
 	
 	public double getTotalPrice() {

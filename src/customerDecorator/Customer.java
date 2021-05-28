@@ -1,4 +1,4 @@
-package customerDeorator;
+package customerDecorator;
 
 public interface Customer {
 	public String whoAmI();

@@ -1,6 +1,6 @@
-package customerDeorator;
+package customerDecorator;
 
-public class CorporateDecorator extends CustomerDeorator{
+public class CorporateDecorator extends CustomerDecorator{
 	public CorporateDecorator(Customer decorated) {
 		super(decorated);
 	}

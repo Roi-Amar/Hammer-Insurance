@@ -68,7 +68,7 @@ public class NewCustomerController {
     private NewCustomerWithInsurence customer = new NewCustomerWithInsurence();
 
     private void changeBtnClass(Button btn) {
-    	if (btn.getStyleClass().contains("btnClicked")) {
+    	if (isCLicked(btn)) {
     		btn.getStyleClass().removeAll("btnClicked"); 
     		btn.getStyleClass().add("btnUnclicked");
     	}
@@ -77,39 +77,58 @@ public class NewCustomerController {
     		btn.getStyleClass().add("btnClicked");
     	}
     }
+    
+    private boolean isCLicked(Button btn) {
+    	if (btn.getStyleClass().contains("btnClicked")) {
+    		return true;
+    	}
+    	return false;
+    }
 
     @FXML
     void addCarInsurance(ActionEvent event) {
     	changeBtnClass(car);
-    	customer.addInsurance("car");
+    	if (isCLicked(car)) {
+    		customer.removeInsurance("car");
+    	}
+    	else customer.addInsurance("car");
     }
 
     @FXML
     void addHealthInsurance(ActionEvent event) {
     	changeBtnClass(health);
-    	customer.addInsurance("health");
-
+    	if (isCLicked(health)) {
+    		customer.removeInsurance("health");
+    	}
+    	else customer.addInsurance("health");
     }
 
     @FXML
     void addHouseInsurance(ActionEvent event) {
     	changeBtnClass(house);
-    	customer.addInsurance("house");
+    	if (isCLicked(house)) {
+    		customer.removeInsurance("house");
+    	}
+    	else customer.addInsurance("house");
 
     }
 
     @FXML
     void addITWInsurance(ActionEvent event) {
     	changeBtnClass(incapacity);
-    	customer.addInsurance("incapacity");
-
+    	if (isCLicked(incapacity)) {
+    		customer.removeInsurance("incapacity");
+    	}
+    	else customer.addInsurance("incapacity");
     }
 
     @FXML
     void addLifeInsurance(ActionEvent event) {
     	changeBtnClass(life);
-    	customer.addInsurance("life");
-
+    	if (isCLicked(life)) {
+    		customer.removeInsurance("life");
+    	}
+    	else customer.addInsurance("life");
     }
 
     @FXML

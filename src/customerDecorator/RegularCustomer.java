@@ -1,4 +1,4 @@
-package customerDeorator;
+package customerDecorator;
 
 import insuranceFactory.Insurance;
 

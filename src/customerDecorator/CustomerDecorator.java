@@ -1,9 +1,9 @@
-package customerDeorator;
+package customerDecorator;
 
-public abstract class CustomerDeorator implements Customer{
+public abstract class CustomerDecorator implements Customer{
 	private Customer decorated;
 
-	public CustomerDeorator(Customer decorated) {
+	public CustomerDecorator(Customer decorated) {
 		setDecoratedShape(decorated);
 	}
 	
