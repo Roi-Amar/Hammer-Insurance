@@ -2,6 +2,7 @@ package logerSingleton;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -30,4 +31,22 @@ public class Logger {
 	    csvReader.close();
 	    return readData;
 	    }
+	    
+	    public boolean writeCSV(String pathToCsv, String[] content) throws IOException {
+	    	FileWriter csvWriter = new FileWriter(pathToCsv,true);
+	    	for (String data : content) {
+	    	    csvWriter.append(data);
+	    	    csvWriter.append(",");
+	    	}
+    	    csvWriter.append("\n");
+	    	csvWriter.flush();
+	    	csvWriter.close();
+	    	return true;
+	    }
+	    
+	    public ArrayList<String[]> readJSON(String pathToJson){
+	    	return null;
+	    }
+
+	
 }
