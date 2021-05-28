@@ -7,9 +7,6 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXTextField;
 
-import entity.Exam;
-import gui_teacher.CreateExam_addQ_step2Controller;
-import gui_teacher.TeacherController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
