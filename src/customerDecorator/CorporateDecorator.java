@@ -7,7 +7,7 @@ public class CorporateDecorator extends CustomerDecorator{
 	
 	@Override
 	public String whoAmI() {
-		return "Corporate " + getDecoratedShape().whoAmI();
+		return "corporate " + getDecoratedShape().whoAmI();
 	}
 
 	@Override

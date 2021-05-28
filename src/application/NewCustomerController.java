@@ -1,18 +1,34 @@
 package application;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXTextField;
 
+import entity.Exam;
+import gui_teacher.CreateExam_addQ_step2Controller;
+import gui_teacher.TeacherController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Background;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import logic.NewCustomerWithInsurence;
 
-public class NewCustomerController {
+public class NewCustomerController implements Initializable{
 
     @FXML
     private AnchorPane leftPane;
@@ -65,7 +81,7 @@ public class NewCustomerController {
     @FXML
     private Text changePrice;
     
-    private NewCustomerWithInsurence customer = new NewCustomerWithInsurence();
+    private NewCustomerWithInsurence customer;
 
     private void changeBtnClass(Button btn) {
     	if (isCLicked(btn)) {
@@ -87,52 +103,46 @@ public class NewCustomerController {
 
     @FXML
     void addCarInsurance(ActionEvent event) {
-    	changeBtnClass(car);
-    	if (isCLicked(car)) {
-    		customer.removeInsurance("car");
-    	}
-    	else customer.addInsurance("car");
+    	insurenceBtn(car, "car");
+
     }
 
     @FXML
     void addHealthInsurance(ActionEvent event) {
-    	changeBtnClass(health);
-    	if (isCLicked(health)) {
-    		customer.removeInsurance("health");
-    	}
-    	else customer.addInsurance("health");
+    	insurenceBtn(health, "health");
+
     }
 
     @FXML
     void addHouseInsurance(ActionEvent event) {
-    	changeBtnClass(house);
-    	if (isCLicked(house)) {
-    		customer.removeInsurance("house");
-    	}
-    	else customer.addInsurance("house");
+    	insurenceBtn(house, "house");
+
 
     }
 
     @FXML
     void addITWInsurance(ActionEvent event) {
-    	changeBtnClass(incapacity);
-    	if (isCLicked(incapacity)) {
-    		customer.removeInsurance("incapacity");
-    	}
-    	else customer.addInsurance("incapacity");
+    	insurenceBtn(incapacity, "incapacity");
+
     }
 
     @FXML
     void addLifeInsurance(ActionEvent event) {
-    	changeBtnClass(life);
-    	if (isCLicked(life)) {
-    		customer.removeInsurance("life");
-    	}
-    	else customer.addInsurance("life");
+    	insurenceBtn(life, "life");
     }
 
     @FXML
     void clickCancel(ActionEvent event) {
+    	manageErrorInField("You data will not be saved!");
+    	try {
+
+			Pane newScreen = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+			HammerControler.root.add(newScreen, 0, 0);
+
+		} catch (IOException e) {
+			System.out.println("Couldn't load!");
+			e.printStackTrace();
+		}
 
     }
 
@@ -160,25 +170,78 @@ public class NewCustomerController {
     		manageErrorInField("Email is invalid");
     	}
     	else {
-    		// create the customer object
+    		customer.updateCostumerData(id, firstName, lastName, email, phone);
+    		// start next page
+    		startNextScreen();
     	}
     }
-
-    private void manageErrorInField(String string) {
-		// TODO Auto-generated method stub
-		// in popup or other way?
+    
+ // create a popup with a message
+	public void manageErrorInField(String txt) {
+		final Stage dialog = new Stage();
+		VBox dialogVbox = new VBox(20);
+		Label lbl = new Label(txt);
+		lbl.setPadding(new Insets(5));
+		lbl.setAlignment(Pos.CENTER);
+		lbl.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
+		dialogVbox.getChildren().add(lbl);
+		Scene dialogScene = new Scene(dialogVbox, lbl.getMinWidth(), lbl.getMinHeight());
+		dialog.setScene(dialogScene);
+		dialog.show();
 	}
+
 
 	@FXML
     void makeCustomerCorporate(ActionEvent event) {
-    	changeBtnClass(corporate);
-    	customer.decorateCustomer("corporate");
+    	decoratorBtn(corporate, "corporate");
     }
 
     @FXML
     void makeCustomerVIP(ActionEvent event) {
-    	changeBtnClass(vip);
-    	customer.decorateCustomer("VIP");
+    	decoratorBtn(vip, "VIP");
     }
+    
+    private void updatePrice() {
+    	changePrice.setText(String.format("%,.2f", customer.getTotalPrice()));
+    }
+    
+    private void decoratorBtn(Button btn, String decorationType) {
+    	if (isCLicked(btn)) {
+    		customer.removeDecoration(decorationType);
+    	}
+    	else customer.decorateCustomer(decorationType);
+    	changeBtnClass(btn);
+    	updatePrice();
+    }
+    
+    private void insurenceBtn(Button btn, String insurenceType) {
+    	if (isCLicked(btn)) {
+    		customer.removeInsurance(insurenceType);
+    	}
+    	else customer.addInsurance(insurenceType);
+    	changeBtnClass(btn);
+    	updatePrice();
+    }
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		customer = new NewCustomerWithInsurence();
+		customer.setCostumerData(null, null, null, null, null);
+	}
+	
+	private void startNextScreen() {
+    	try {
+
+			NewCustomer2Controller.setNewCustomer(customer);
+			Pane newScreen = FXMLLoader.load(getClass().getResource("NewCustomer2.fxml"));
+			HammerControler.root.add(newScreen, 0, 0);
+
+		} catch (IOException e) {
+			System.out.println("Couldn't load!");
+			e.printStackTrace();
+		}
+
+		
+	}
 
 }

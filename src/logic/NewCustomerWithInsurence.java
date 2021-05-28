@@ -17,8 +17,28 @@ import insuranceFactory.LifeInsuranceGenerator;
 public class NewCustomerWithInsurence {
 	Customer customer;
 	
-	public void setCostumerData(String ID, String firstName, String lastName) {
-		customer = new RegularCustomer(new CustomerData(ID, firstName, lastName));
+	public void setCostumerData(String ID, String firstName, String lastName, String email, String phone) {
+		customer = new RegularCustomer(new CustomerData(ID, firstName, lastName, email, phone));
+	}
+	
+	public void updateCostumerData(String ID, String firstName, String lastName, String email, String phone) {
+		Customer internal;
+		// need to find the innermost customer
+		if (customer.whoAmI().contains("VIP") || customer.whoAmI().contains("corporate")) {
+			internal = ((CustomerDecorator)customer).getDecoratedShape();
+			// check if there's another level
+			if (internal.whoAmI().contains("VIP") || internal.whoAmI().contains("corporate")) {
+				internal = ((CustomerDecorator)internal).getDecoratedShape();
+			}
+		}
+		else {
+			internal = customer;
+		}
+		internal.getData().setID(ID);
+		internal.getData().setFirstName(firstName);
+		internal.getData().setLastName(lastName);
+		internal.getData().setEmail(email);
+		internal.getData().setPhone(phone);
 	}
 	
 	public void addInsurance(String insurenceType) {
@@ -56,6 +76,7 @@ public class NewCustomerWithInsurence {
 		for (Insurance i: customer.getData().getInsurances()) {
 			if (i.getName() == insurenceType) {
 				customer.getData().removeInsurance(i);
+				return;
 			}
 		}
 	}
@@ -76,18 +97,42 @@ public class NewCustomerWithInsurence {
 	
 	public void removeDecoration(String decorationType) {
 		// check if the external decorator is the one we need to remove
-		if (customer.whoAmI().contains(decorationType)) {
+		if (customer.whoAmI().startsWith(decorationType)) {
 			customer = ((CustomerDecorator)customer).getDecoratedShape();
 		}
 		// if not, the decoration needed to remove is the internal one
 		else {
-			
+			Customer internal = ((CustomerDecorator)customer).getDecoratedShape();
+			if (internal != null && internal.whoAmI().startsWith(decorationType)) {
+				internal = ((CustomerDecorator)internal).getDecoratedShape();
+				if (internal != null) 
+					((CustomerDecorator)customer).setDecoratedShape(internal);
+			}
 		}
 
 	}
 	
 	public double getTotalPrice() {
 		return customer.getTotalPrice();
+	}
+	
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("Name: " + customer.getData().getFirstName() + " " + customer.getData().getLastName() + "\n");
+		str.append("Email: " + customer.getData().getEmail() + "\n");
+		str.append("ID: " + customer.getData().getID() + "\n");
+		str.append("Phone: " + customer.getData().getPhone() + "\n");
+		
+		return str.toString();
+	}
+
+	public String printAllInsurences() {
+		StringBuilder str = new StringBuilder();
+		for (Insurance i : customer.getData().getInsurances()) {
+			str.append(i.getName() + "\n");
+		}
+
+		return str.toString();
 	}
 
 }
