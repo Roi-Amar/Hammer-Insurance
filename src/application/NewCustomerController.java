@@ -232,6 +232,7 @@ public class NewCustomerController implements Initializable{
 	private void startNextScreen() {
     	try {
 
+			NewCustomer2Controller.setNewCustomer(customer);
 			Pane newScreen = FXMLLoader.load(getClass().getResource("NewCustomer2.fxml"));
 			HammerControler.root.add(newScreen, 0, 0);
 

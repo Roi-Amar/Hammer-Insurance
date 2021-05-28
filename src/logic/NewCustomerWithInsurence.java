@@ -115,5 +115,24 @@ public class NewCustomerWithInsurence {
 	public double getTotalPrice() {
 		return customer.getTotalPrice();
 	}
+	
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		str.append("Name: " + customer.getData().getFirstName() + " " + customer.getData().getLastName() + "\n");
+		str.append("Email: " + customer.getData().getEmail() + "\n");
+		str.append("ID: " + customer.getData().getID() + "\n");
+		str.append("Phone: " + customer.getData().getPhone() + "\n");
+		
+		return str.toString();
+	}
+
+	public String printAllInsurences() {
+		StringBuilder str = new StringBuilder();
+		for (Insurance i : customer.getData().getInsurances()) {
+			str.append(i.getName() + "\n");
+		}
+
+		return str.toString();
+	}
 
 }
