@@ -8,19 +8,25 @@ public class CustomerData {
 	private String firstName;
 	private String lastName;
 	private ArrayList<Insurance> Insurances = new ArrayList<Insurance>();
+	private String email;
+	private String phone;
 	
-	public CustomerData(String ID, String firstName, String lastName) {
+	public CustomerData(String ID, String firstName, String lastName, String email, String phone) {
 		setID(ID);
 		setFirstName(firstName);
 		setLastName(lastName);
+		setEmail(email);
+		setPhone(phone);
 	}
 
 	
-	public CustomerData(String ID, String firstName, String lastName, Insurance insurance) {
+	public CustomerData(String ID, String firstName, String lastName, Insurance insurance,  String email, String phone) {
 		setID(ID);
 		setFirstName(firstName);
 		setLastName(lastName);
 		addInsurance(insurance);
+		setEmail(email);
+		setPhone(phone);
 	}
 
 	public String getID() {
@@ -61,6 +67,26 @@ public class CustomerData {
 	
 	public void removeInsurance(Insurance insurance) {
 		Insurances.remove(insurance);
+	}
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 	
 	
