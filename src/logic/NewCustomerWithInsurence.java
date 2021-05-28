@@ -1,5 +1,7 @@
 package logic;
 
+import java.util.ArrayList;
+
 import customerDecorator.CorporateDecorator;
 import customerDecorator.Customer;
 import customerDecorator.CustomerData;
@@ -133,6 +135,25 @@ public class NewCustomerWithInsurence {
 		}
 
 		return str.toString();
+	}
+	
+	public String[] getFullCustomerDetails() {
+		ArrayList<String> details = new ArrayList<>();
+		
+		details.add(customer.getData().getFirstName());
+		details.add(customer.getData().getLastName());
+		details.add(customer.getData().getID());
+		details.add(customer.getData().getEmail());
+		details.add(customer.getData().getPhone());
+
+		for (Insurance i : customer.getData().getInsurances()) {
+			details.add(i.getName());
+		}
+		
+		details.add(customer.whoAmI());
+		
+		String[] finalDetails = new String[5];
+		return details.toArray(finalDetails);
 	}
 
 }
