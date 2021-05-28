@@ -6,6 +6,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
+import org.json.simple.*;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 public class Logger {
 	    private static Logger instance = null;
@@ -47,9 +50,11 @@ public class Logger {
 	    	return true;
 	    }
 	    
-	    public ArrayList<String[]> readJSON(String pathToJson){
-	    	return null;
+	    public String[] readJSON(String pathToJson) throws IOException, ParseException {
+	    	FileReader reader = new FileReader(basePath+pathToJson);
+	        JSONParser jsonParser = new JSONParser();
+	        JSONObject obj = (JSONObject) jsonParser.parse(reader);
+	        String[] ret = {(String) obj.get("version"), (String) obj.get("student_name_1"),(String) obj.get("student_name_2")};
+	    	return ret;
 	    }
-
-	
 }
