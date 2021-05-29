@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import customerDecorator.CustomerData;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,31 +30,31 @@ public class ViewAllController implements Initializable {
     private Button back;
   
     @FXML
-    private TableView<String[]> tableToChange;
+    private TableView<CustomerData> tableToChange;
 
     @FXML
-    private TableColumn<String[], String> ID;
+    private TableColumn<CustomerData, String> ID;
     
     @FXML
-    private TableColumn<String[], String> firstName;
+    private TableColumn<CustomerData, String> firstName;
 
     @FXML
-    private TableColumn<String[], String> lastName;
+    private TableColumn<CustomerData, String> lastName;
 
     @FXML
-    private TableColumn<String[], String> Email;
+    private TableColumn<CustomerData, String> Email;
 
     @FXML
-    private TableColumn<String[], String> phoneNum;
+    private TableColumn<CustomerData, String> phoneNum;
 
     @FXML
-    private TableColumn<String[], String> insurances;
+    private TableColumn<CustomerData, String> insurances;
 
     @FXML
-    private TableColumn<String[], String> customerType;
+    private TableColumn<CustomerData, String> customerType;
     
     @FXML
-    private TableColumn<String[], String> price;
+    private TableColumn<CustomerData, String> price;
     
     @FXML
     void clickedBack(ActionEvent event) {
@@ -69,14 +70,14 @@ public class ViewAllController implements Initializable {
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
-		ID.setCellValueFactory(new PropertyValueFactory<String[],String>("ID"));
-		firstName.setCellValueFactory(new PropertyValueFactory<String[],String>("firstName"));
-		lastName.setCellValueFactory(new PropertyValueFactory<String[],String>("lastName"));
-		Email.setCellValueFactory(new PropertyValueFactory<String[],String>("email"));
-		phoneNum.setCellValueFactory(new PropertyValueFactory<String[],String>("phoneNum"));
-		insurances.setCellValueFactory(new PropertyValueFactory<String[],String>("insurances"));
-		customerType.setCellValueFactory(new PropertyValueFactory<String[],String>("customerType"));
-		price.setCellValueFactory(new PropertyValueFactory<String[],String>("price"));
+		ID.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("ID"));
+		firstName.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("firstName"));
+		lastName.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("lastName"));
+		Email.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("email"));
+		phoneNum.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("phone"));
+		insurances.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("InsurancesAsString"));
+		customerType.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("typeString"));
+		price.setCellValueFactory(new PropertyValueFactory<CustomerData,String>("priceString"));
 		
     	Logger logger = Logger.getInstance();
 
@@ -88,7 +89,7 @@ public class ViewAllController implements Initializable {
 			e.printStackTrace();
 		}
 		for (String[] rowData : csvData) {
-			tableToChange.getItems().add(rowData);
+			tableToChange.getItems().add(new CustomerData(rowData));
 		}
 		
 	}

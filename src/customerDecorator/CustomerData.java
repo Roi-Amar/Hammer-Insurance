@@ -10,6 +10,9 @@ public class CustomerData {
 	private ArrayList<Insurance> Insurances = new ArrayList<Insurance>();
 	private String email;
 	private String phone;
+	private String typeString;
+	private String InsurancesAsString;
+	private String priceString;
 	
 	public CustomerData(String ID, String firstName, String lastName, String email, String phone) {
 		setID(ID);
@@ -27,6 +30,17 @@ public class CustomerData {
 		addInsurance(insurance);
 		setEmail(email);
 		setPhone(phone);
+	}
+	
+	public CustomerData(String[] rowdata) {
+		setFirstName(rowdata[0]);
+		setLastName(rowdata[1]);
+		setID(rowdata[2]);
+		setEmail(rowdata[3]);
+		setPhone(rowdata[4]);
+		setInsurancesAsString(rowdata[5]);
+		setTypeString(rowdata[6]);
+		setPriceString(rowdata[7]);
 	}
 
 	public String getID() {
@@ -89,5 +103,30 @@ public class CustomerData {
 		this.phone = phone;
 	}
 	
+	public String getInsurancesAsString() {
+		return InsurancesAsString;
+	}
+
+
+	public void setInsurancesAsString(String insurancesAsString) {
+		InsurancesAsString = insurancesAsString;
+	}
+
+
+	public String getPriceString() {
+		return priceString;
+	}
+
+
+	public void setPriceString(String priceString) {
+		this.priceString = priceString;
+	}
 	
+	public String getTypeString() {
+		return typeString;
+	}
+
+	public void setTypeString(String typeString) {
+		this.typeString = typeString;
+	}
 }
