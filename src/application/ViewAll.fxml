@@ -34,13 +34,13 @@
             </Button>
             <TableView fx:id="tableToChange" layoutX="14.0" layoutY="15.0" prefHeight="558.0" prefWidth="975.0">
               <columns>
-	         	<TableColumn fx:id="firstName" prefWidth="90.4000244140625" text="First Name" />
-	         	<TableColumn fx:id="lastName" prefWidth="92.0" text="Last Name" />
-	            <TableColumn fx:id="ID" prefWidth="128.800048828125" text="ID" />
-	            <TableColumn fx:id="Email" prefWidth="153.5999755859375" text="Email" />
-	            <TableColumn fx:id="phoneNum" prefWidth="150.40008544921875" text="Phone Number" />
-                  <TableColumn fx:id="insurances" prefWidth="196.0" text="Insurances" />
-                  <TableColumn fx:id="customerType" prefWidth="78.39990234375" text="Type" />
+	         	<TableColumn fx:id="firstName" prefWidth="77.60003662109375" text="First Name" />
+	         	<TableColumn fx:id="lastName" text="Last Name" />
+	            <TableColumn fx:id="ID" prefWidth="114.4000244140625" text="ID" />
+	            <TableColumn fx:id="Email" prefWidth="133.59991455078125" text="Email" />
+	            <TableColumn fx:id="phoneNum" prefWidth="135.199951171875" text="Phone Number" />
+                  <TableColumn fx:id="insurances" prefWidth="233.60009765625" text="Insurances" />
+                  <TableColumn fx:id="customerType" prefWidth="121.5999755859375" text="Type" />
                   <TableColumn fx:id="price" prefWidth="86.4000244140625" text="Price" />
       		  </columns>
             </TableView>

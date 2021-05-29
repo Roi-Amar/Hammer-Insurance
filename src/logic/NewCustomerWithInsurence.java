@@ -145,9 +145,13 @@ public class NewCustomerWithInsurence {
 		details.add(customer.getData().getID());
 		details.add(customer.getData().getEmail());
 		details.add(customer.getData().getPhone());
+		ArrayList<Insurance> allInsurances = customer.getData().getInsurances();
 		String insurances = "";
-		for (Insurance i : customer.getData().getInsurances()) {
-			insurances += i.getName() + " ";
+		for (int i=0;i<allInsurances.size();i++) {
+			insurances += allInsurances.get(i).getName();
+			if (allInsurances.size()!=i+1) {
+				insurances += " + ";
+			}
 		}
 		details.add(insurances.toString());
 		details.add(customer.whoAmI());
