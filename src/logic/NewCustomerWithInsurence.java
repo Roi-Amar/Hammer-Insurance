@@ -145,15 +145,15 @@ public class NewCustomerWithInsurence {
 		details.add(customer.getData().getID());
 		details.add(customer.getData().getEmail());
 		details.add(customer.getData().getPhone());
-
+		ArrayList<String> Insurances = new ArrayList<String>();
 		for (Insurance i : customer.getData().getInsurances()) {
-			details.add(i.getName());
+			Insurances.add(i.getName());
 		}
-		
+		details.add(Insurances.toString());
 		details.add(customer.whoAmI());
+		details.add(""+customer.getTotalPrice());
 		
-		String[] finalDetails = new String[5];
-		return details.toArray(finalDetails);
+		return details.toArray(new String[0]);
 	}
 
 }
