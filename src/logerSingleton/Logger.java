@@ -31,7 +31,7 @@ public class Logger {
 	    ArrayList<String[]> readData = new ArrayList<String[]>();
 	    BufferedReader csvReader = new BufferedReader(new FileReader(basePath+pathToCsv));
 		    while ((row = csvReader.readLine()) != null) {
-		        String[] data = row.split(";");
+		        String[] data = row.split(",");
 		        readData.add(data);
 		    }
 	    csvReader.close();
@@ -42,7 +42,7 @@ public class Logger {
 	    	FileWriter csvWriter = new FileWriter(basePath+pathToCsv,true);
 	    	for (String data : content) {
 	    	    csvWriter.append(data);
-	    	    csvWriter.append(";");
+	    	    csvWriter.append(",");
 	    	}
     	    csvWriter.append("\n");
 	    	csvWriter.flush();

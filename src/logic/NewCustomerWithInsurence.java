@@ -145,11 +145,11 @@ public class NewCustomerWithInsurence {
 		details.add(customer.getData().getID());
 		details.add(customer.getData().getEmail());
 		details.add(customer.getData().getPhone());
-		ArrayList<String> Insurances = new ArrayList<String>();
+		String insurances = "";
 		for (Insurance i : customer.getData().getInsurances()) {
-			Insurances.add(i.getName());
+			insurances += i.getName() + " ";
 		}
-		details.add(Insurances.toString());
+		details.add(insurances.toString());
 		details.add(customer.whoAmI());
 		details.add(""+customer.getTotalPrice());
 		
