@@ -27,7 +27,7 @@
       </AnchorPane>
       <AnchorPane fx:id="leftPane" layoutY="150.0" prefHeight="650.0" prefWidth="500.0" style="-fx-background-color: #C7D6ED;">
          <children>
-            <Button fx:id="back" layoutX="14.0" layoutY="584.0" mnemonicParsing="false" onAction="#clickBack" prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #7F97D3; -fx-border-color: #ffd39e;" text="back" textFill="#ffd39e">
+            <Button fx:id="cancel" layoutX="14.0" layoutY="584.0" mnemonicParsing="false" onAction="#clickCancel" prefHeight="52.0" prefWidth="122.0" style="-fx-background-color: #7F97D3; -fx-border-color: #ffd39e;" text="cancel" textFill="#ffd39e">
                <font>
                   <Font name="Ebrima Bold" size="26.0" />
                </font>

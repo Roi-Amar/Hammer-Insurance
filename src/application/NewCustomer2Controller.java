@@ -32,7 +32,7 @@ public class NewCustomer2Controller implements Initializable{
     private AnchorPane leftPane;
 
     @FXML
-    private Button back;
+    private Button cancel;
 
     @FXML
     private Text changePrice;
@@ -50,8 +50,17 @@ public class NewCustomer2Controller implements Initializable{
     private JFXTextArea customerDetails;
 
     @FXML
-    void clickBack(ActionEvent event) {
+    void clickCancel(ActionEvent event) {
+    	popUp("You data will not be saved!");
+    	try {
 
+			Pane newScreen = FXMLLoader.load(getClass().getResource("MainWindow.fxml"));
+			HammerControler.root.add(newScreen, 0, 0);
+
+		} catch (IOException e) {
+			System.out.println("Couldn't load!");
+			e.printStackTrace();
+		}
     }
 
     @FXML
@@ -110,4 +119,5 @@ public class NewCustomer2Controller implements Initializable{
 		insuranceChoose.setText(newCustomer.printAllInsurences());
 	}
 
+	
 }
